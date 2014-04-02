@@ -28,7 +28,7 @@ few more, maybe someone from the new generations?
 john resig, jef atwood, joel spolsky, Kathy Sierra
 ..
 
-30 seconds for each question. possibility for automatic rollout?
+30 seconds for each question. possibility for automatic roll-out?
 trigger of new question without displaying results.
 
 ...
