@@ -96,11 +96,11 @@
 						<p class="fragment">Mark Zuckerberg</p>
 					</section>					
 				</section>
-
+<!-- 
 				<section>
 					<h2>What about this one?</h2>
 					<iframe width="640" height="480" src="//www.youtube.com/embed/Vhh_GeBPOhs" data-autoplay></iframe>
-				</section>
+				</section> -->
 
 				<section>
 					<h2>How come we know all those guys?<h2>
@@ -145,7 +145,7 @@
 					</ol>
 				</section>
 
-				<section>
+				<section data-state="q1">
 					<h2>1. Warmup: Who is this guy?</h2>
 					<img src="/img/stallman.jpg" width="450" alt="rms" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -156,7 +156,7 @@
 					</ul>
 				</section>
 
-				<section>
+				<section data-state="q2">
 					<h2>2. Who invented Java?</h2>
 					<img src="/img/stallman.jpg" width="450" alt="rms" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -167,7 +167,7 @@
 					</ul>
 				</section>
 
-				<section>
+				<section data-state="q3">
 					<h2>3. Who created Tomcat?</h2>
 					<img src="/img/jdd.jpg" width="450" alt="jdd" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -178,7 +178,7 @@
 					</ul>
 				</section>
 
-				<section>
+				<section data-state="q4">
 					<h2>4. Can you identify the authors of this book?</h2>
 					<img src="/img/gof.jpg" width="450" alt="gof" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -189,7 +189,7 @@
 					</ul>
 				</section>
 
-				<section>
+				<section data-state="q5">
 					<h2>5. Who is this guy?</h2>
 					<img src="/img/hanselman.jpg" width="450" alt="hanselman" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -201,7 +201,7 @@
 				</section>
 
 
-				<section>
+				<section data-state="q6">
 					<h2>6. Who is the creator of jQuery?</h2>
 					<img src="/img/resig.jpg" width="450" alt="resig" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -212,7 +212,7 @@
 					</ul>
 				</section>
 				
-				<section>
+				<section data-state="q7">
 					<h2>7. Who is the inventor of Git?</h2>
 					<img src="/img/git_logo.png" width="450" alt="git_logo" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -223,7 +223,7 @@
 					</ul>
 				</section>
 				
-				<section>
+				<section data-state="q8">
 					<h2>8. Who are the authors of Pragmatic Programmer?</h2>
 					<img src="/img/prag_prog.jpg" width="450" alt="prag_prog" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -234,7 +234,7 @@
 					</ul>
 				</section>
 
-				<section>
+				<section data-state="q9">
 					<h2>9. Who is the inventor of Rails?</h2>
 					<img src="/img/dhh.jpg" width="450" alt="dhh" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -245,7 +245,7 @@
 					</ul>
 				</section>
 
-				<section>
+				<section data-state="q10">
 					<h2>10. Who is the current leader of jug.mk?</h2>
 					<img src="/img/jug_mk.png" width="450" alt="jug_mk" style="float: left;">
 					<ul style="float: left; margin: 100px 0 0 150px;">
@@ -270,10 +270,18 @@ Reveal.addEventListener( 'customevent', function() {
 
 				
 				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
+					<h1>Results</h1>
+					<h2>Now or Later?</h2>
 					<p>
 						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
 					</p>
+				</section>
+				<section>
+					<h2>1. Warmup: Who is this guy?</h2>
+					<img src="/img/stallman.jpg" width="300" alt="rms" style="float: left;">
+					<div style="float: left; margin: 100px 0 0 150px;">
+						<iframe src="http://directpoll.com/svy?XDVhEty3WTcDnVAwrQ0ZmAVwb3n6oHoaNcDb1nF8" width="500" height="400" frameborder="0"></iframe>
+					</div>
 				</section>
 
 				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
@@ -291,9 +299,10 @@ Reveal.addEventListener( 'customevent', function() {
 			</div>
 
 		</div>
-
+		<iframe style="display: none" src="blank.html" id="changer"></iframe>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+		<script src="lib/js/jquery-2.0.3.min.js"></script>
 
 		<script>
 
@@ -322,7 +331,120 @@ Reveal.addEventListener( 'customevent', function() {
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
+			
+			Reveal.addEventListener('q1', function() {
+				console.log('"q1" has fired');
 
+				nextQuestion(1);
+			} );
+
+			Reveal.addEventListener('q2', function() {
+				console.log('"q2" has fired');
+
+				nextQuestion(2);
+			} );
+
+			Reveal.addEventListener('q3', function() {
+				console.log('"q3" has fired');
+
+				nextQuestion(3);
+			} );
+			
+			Reveal.addEventListener('q4', function() {
+				console.log('"q4" has fired');
+
+				nextQuestion(4);
+			} );
+			
+			Reveal.addEventListener('q5', function() {
+				console.log('"q5" has fired');
+
+				nextQuestion(5);
+			} );
+			
+			Reveal.addEventListener('q6', function() {
+				console.log('"q6" has fired');
+
+				nextQuestion(6);
+			} );
+			
+			Reveal.addEventListener('q7', function() {
+				console.log('"q7" has fired');
+
+				nextQuestion(7);
+			} );
+			
+			Reveal.addEventListener('q8', function() {
+				console.log('"q8" has fired');
+
+				nextQuestion(8);
+			} );
+			
+			Reveal.addEventListener('q9', function() {
+				console.log('"q9" has fired');
+
+				nextQuestion(9);
+			} );
+			
+			Reveal.addEventListener('q10', function() {
+				console.log('"q10" has fired');
+
+				nextQuestion(10);
+			} );
+
+			function nextQuestion(qId) {
+				// $.get(
+				//     "http://directpoll.com/svy?id=SDoKCwk5tt4-&cmd=result&opt=s" + qId,
+				//     function(data) {
+				//        console.log('question changed to: ' + qId);
+				//     }
+				// );
+			// 	var xmlHttp = null;
+
+			//     xmlHttp = new XMLHttpRequest();
+			//     xmlHttp.open( "GET", "http://directpoll.com/svy?id=SDoKCwk5tt4-&cmd=result&opt=s" + qId, false );
+			//     xmlHttp.send( null );
+			//     return xmlHttp.responseText;
+
+			$("#changer").attr("src","http://directpoll.com/svy?id=SDoKCwk5tt4-&cmd=result&opt=s" + qId);
+			}
+			
+			// window.directPoll = {};
+			// window.directPoll.websocket = {};
+			// window.directPoll.websocket.conn = null;
+
+			// function startWebsocket() {
+		 //        if (window.WebSocket) {
+		 //            // window.directPoll.websocket.conn = new WebSocket("ws://localhost:8080/svy?id=c3iPNqD1EXQ-&cmd=get");
+		 //            window.directPoll.websocket.conn = new WebSocket("ws://directpoll.com/svy?id=SDoKCwk5tt4-&cmd=get");
+		 //            window.directPoll.websocket.conn.onclose = function (evt) {
+		 //                message("Connection closed");
+		 //                setTimeout(function () {
+		 //                    startWebsocket();
+		 //                }, 5000);
+		 //            };
+		 //            window.directPoll.websocket.conn.onmessage = function (evt) {
+		 //                newResult(evt.data);
+		 //            };
+		 //            // want current Q
+		 //            window.directPoll.websocket.conn.onopen = function (evt) {
+		 //                //var mymsg = JSON.stringify(qid);
+			// 			//this.send(mymsg);
+		 //            };
+
+		 //        } else {
+		 //            console.log("Your browser does not support WebSockets.");
+		 //        }
+		 //    }
+
+		 //    nextQuestion = function(questionId) {
+			// 	window.directPoll.websocket.conn.send(JSON.stringify({
+			// 		command: "select",
+			// 		value: '' + questionId + ''
+			// 	}));
+			// };
+
+			// startWebsocket();
 		</script>
 
 	</body>
